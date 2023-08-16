@@ -30,6 +30,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/, // 제외할 경로
         use: [
           'babel-loader'
         ]
@@ -47,5 +48,12 @@ module.exports = {
         { from: 'static'}
       ]
     })
-  ]
+  ],
+  
+  // 개발 서버 옵션
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    hot: true
+  }
 }
